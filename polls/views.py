@@ -40,7 +40,7 @@ def add_question_page(request):
 
     if formChoice.is_valid():
         cho = formChoice.save(commit=False)
-        cho.question = que
+        cho.question_id = que.id
         cho.save()
     else:  # invalid case
         # print(formChoice.is_valid())  # form contains data and errors
