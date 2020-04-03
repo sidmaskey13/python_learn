@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block content%}
+<h2>Add Questions</h2>
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ formQ.as_p }}
+    {{ formC.as_p }}
+    <input type="submit" value="Save">
+</form>
+{% if formC.errors %}
+
+error!
+{% endif %}
+{%endblock%}

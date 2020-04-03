@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Item details</h1>
+<p>Name: {{product_detail.title}}</p>
+<p>Description: {% if product_detail.description  %}{{product_detail.description}}{%else%}Coming soon{%endif%}</p>
+{% endblock  %}

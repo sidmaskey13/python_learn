@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{% block content %}
+<h1>About Page</h1>
+<h5>{{request.user}}</h5>
+<p><b>Name: </b>{{name|title}}</p>
+<p><b>Address: </b>{{address}}</p>
+<p><b>Mobile: </b>{{mobile}}</p>
+<p><b>Options: </b>
+    {%for i in list%}
+     <i>({{forloop.counter}}) {{i}}</i>
+    {%endfor%}
+</p>
+{%if name == 'Sid' %}
+<h2>Welcome {{name}}</h2>
+{%else%}
+<h2>Welcome User</h2>
+{%endif%}
+
+
+{% endblock %}

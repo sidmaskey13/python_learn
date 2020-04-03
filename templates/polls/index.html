@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block content%}
+<h1>All Polls List</h1>
+<a href="{% url 'polls:polls-add' %}" class="btn btn-success">Add Question</a>
+<table class="table table-striped">
+    <tr>
+        <th>Question</th>
+        <th>Action</th>
+    </tr>
+    {%for i in object_list%}
+    <tr>
+        <td>{{i.question_text}}</td>
+        <td>
+        <a class="btn btn-primary" href="{% url 'polls:polls-detail' i.id %}" >Vote</button></a>
+        <a class="btn btn-secondary" href="{% url 'polls:polls-result' i.id %}" >Results</button></a>
+        </td>
+    </tr>
+
+    {%endfor%}
+
+</table>
+
+{%endblock%}
