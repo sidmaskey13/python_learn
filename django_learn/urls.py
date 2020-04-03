@@ -19,7 +19,6 @@ from pages.views import home_view,about_view
 
 urlpatterns = [
     path('products/', include('products.urls')),
-    path('articles/', include('blog.urls')),
     path('polls/', include('polls.urls')),
 
     path('', home_view, name='Home'),
